@@ -1,0 +1,73 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Logo section */
+.logo-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.site-title {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #8bc34a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+}
+
+/* Hero Image */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Involved | Direct Donation</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <!-- Header & Navigation Bar -->
+  
+    <header>
+    <div class="logo-section">
+      <img src="C:\Users\aleen\Documents\htmlpgms\logo.jpg" alt="Logo" class="logo" />
+      <h1 class="site-title">DIRECT DONATION</h1>
+    </div>
+    <nav class="navbar">
+     <a href="index.html">HOME</a> 
+      <a href="about.html">ABOUT US</a>
+      <a href="get.html">GET INVOLVED</a>
+        <a href="donation.html">DONATE</a>
+    
+      <div class="login">
+       
+        <a href="login.html">👤Log In</a>
+      </div>
+    </nav>
+  </header>
+  <!-- Get Involved Form Section -->
+  <section class="content">
+    <div class="container"><center>
+      <h2>Get Involved</h2>
+      <p>Want to make a difference? Fill out the form below and become a part of our growing community!</p>
+
+      <form id="involveForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required /><BR>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required /><BR>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" /><br>
+
+        <label for="interest">How would you like to help?</label>
+        <select id="interest" name="interest" required>
+          <option value="">--Select an option--</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="donate_goods">Donate clothes</option>
+          <option value="fundraise">Donate electronic devices</option>
+          <option value="other">Other</option>
+        </select><br>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div id="formMessage"></div>
+    </center></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy;ALEENA ANTONY 2025 Direct Donation. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

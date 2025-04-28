@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Direct Donation</title>
+  <link rel="stylesheet" href="2.css" />
+</head>
+<body><center>
+
+  <!-- Header & Navbar -->
+  <header>
+    <div class="logo-section">
+      <img src="C:\Users\aleen\Documents\htmlpgms\logo.jpg" alt="Logo" class="logo" />
+      <h1 class="site-title">DIRECT DONATION</h1>
+    </div>
+    <nav class="navbar">
+     <a href="index.html">HOME</a> 
+      <a href="about.html">ABOUT US</a>
+      <a href="get.html">GET INVOLVED</a>
+        <a href="donation.html">DONATE</a>
+    
+      <div class="login">
+       
+        <a href="login.html">👤Log In</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="donation-container">
+    <h2>WE WELCOME YOUR DONATION</h2>
+    <p class="description">
+      This is your campaign description. It’s a great place to tell visitors what this campaign is about, connect with your donors and draw attention to your cause.
+    </p>
+
+   <h2>DONATE NOW</h2>
+    <h3>Amount</h3>
+     <form id="donationForm" onsubmit="submitDonation(event)">
+    <div>
+      <button type="button" class="amount-btn" data-amount="10">₹10</button>
+      <button type="button" class="amount-btn" data-amount="50">₹50</button>
+      <button type="button" class="amount-btn" data-amount="100">₹100</button>
+      <button type="button" class="amount-btn" data-amount="other">Other</button>
+    </div>
+
+    <div id="otherInputDiv" style="display: none;">
+      <input type="number" id="customAmount" placeholder="Enter amount" min="1" />
+    </div>
+
+    <input type="hidden" name="donationAmount" id="donationAmount" value="10" />
+
+    <button type="submit" id="donateBtn">Donate ₹10</button>
+  </form>
+
+  <script>
+    const buttons = document.querySelectorAll('.amount-btn');
+    const donationAmountInput = document.getElementById('donationAmount');
+    const donateBtn = document.getElementById('donateBtn');
+    const customAmountInput = document.getElementById('customAmount');
+    const otherInputDiv = document.getElementById('otherInputDiv');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const value = this.dataset.amount;
+
+        if (value === 'other') {
+          otherInputDiv.style.display = 'block';
+          donateBtn.textContent = 'Donate ₹';
+          donationAmountInput.value = '';
+        } else {
+          otherInputDiv.style.display = 'none';
+          donationAmountInput.value = value;
+          donateBtn.textContent = `Donate ₹${value}`;
+        }
+      });
+    });
+
+    customAmountInput.addEventListener('input', () => {
+      const customValue = customAmountInput.value;
+      donationAmountInput.value = customValue;
+      donateBtn.textContent = `Donate ₹${customValue}`;
+    });
+
+    function submitDonation(event) {
+      event.preventDefault();
+      const amount = donationAmountInput.value;
+      if (!amount || amount < 1) {
+        alert("Please enter a valid donation amount.");
+        return;
+      }
+      alert(`Thank you for donating ₹${amount}!`);
+      // Here you could send the data to a server using fetch()
+      // Or redirect to a payment gateway
+    }
+  </script>
+  <footer>
+    <div>
+      <strong>Find us:</strong><br>
+      Hormis Nagar,<br>
+      Mookkannoor PO,<br>
+      Angamaly, Ernakulam
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+
